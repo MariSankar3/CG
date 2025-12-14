@@ -1,0 +1,79 @@
+.toggle-containe {
+  width: 70px;
+  height: 32px;
+  background: rgb(23, 23, 23);
+  background-image: url("ssct (2).png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+  padding: 3px;
+  position: relative;
+  cursor: pointer;
+  border: 3px solid gray;
+  margin-left: 10px;
+  border-image-source:
+    linear-gradient(180deg, #292929 0%, rgba(82, 62, 53, 0) 100%),
+    radial-gradient(
+      40% 25% at 78% 87%,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  border-image-slice: 1;
+}
+
+/* MULTICOLOR SLIDER BUTTON */
+.slide {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #d6f47f,
+    #0c887e,
+    rgb(0, 255, 174),
+    #0c7588,
+    #a18cd1,
+    #ef79cd
+  );
+  background-size: 300%;
+  animation: sliderFlow 4s linear infinite;
+  transition: left 0.3s ease;
+}
+
+/* GRADIENT ANIMATION */
+@keyframes sliderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* SLIDER POSITIONS (RIGHT → LEFT MOVEMENT) */
+.slide.right {
+  left: -1.2px;   /* Start at RIGHT visually */
+  top: -1.4px;
+}
+.slide.left {
+  left: 36px;  /* Move to LEFT when toggled */
+  top: -1.9px;
+}
+
+/* ICON INSIDE SLIDER */
+.slider-ico {
+  width: 30px;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+}
+@media (max-width:800px) {
+  .slide {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}

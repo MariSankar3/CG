@@ -1,0 +1,222 @@
+/* ----------------------------------------------------
+   BASE DESKTOP LAYOUT
+---------------------------------------------------- */
+.ss-stage {
+  height: 600vh;
+  background: linear-gradient(180deg, #111, #000);
+  position: relative;
+  width: 96%;
+  border: 1px solid var(--text-color);
+  display: grid;
+}
+.ss-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: #000;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.ss-card {
+  flex: 1;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  border-left:1px solid var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: flex 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: flex;
+  overflow: hidden;
+  font-family: raleway;
+}
+
+/* IMAGE (desktop default) */
+.ss-card img {
+  width: 90px;
+  opacity: 0.6;
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity, width;
+  margin-left: -20%;
+  margin-top: 100%;
+  position: absolute;
+}
+
+/* Main text */
+.ss-card p {
+  position: absolute;
+  top: 50px;
+  text-align: left;
+  margin-left: -10%;
+  width: 75%;
+  font-size: 16px;
+  opacity: 1;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    font-size 0.4s ease;
+  will-change: transform;
+  font-family: Raleway;
+  font-weight: 700;
+}
+
+/* Step number */
+.ss-card span {
+  position: absolute;
+  bottom: 30px;
+  font-size: 50px;
+  margin-left: -50%;
+  color: rgba(255,255,255,0.4);
+  color: var(--text-color);
+  
+}
+
+/* ACTIVE CARD EXPANDS */
+.ss-card.active {
+  flex: 3;
+  background-color: rgba(52, 52, 52, 0.228);
+}
+
+.ss-card.active img {
+  width: 150px;
+  opacity: 1;
+  margin-left: 160px;
+  margin-top: -190px;
+}
+
+.ss-card.active p {
+  margin-top: 72%;
+  font-size: 20px;
+}
+
+.ss-card.active span {
+  bottom: 450px;
+  font-size: 70px;
+  margin-left: -70%;
+}
+
+/* PO DESCRIPTION */
+.po {
+  display: none;
+  color: var(--text-color);
+  font-size: 14px !important;   /* smaller */
+  line-height: 1.5;
+  text-align: left;
+  opacity: 0.85;
+  width: 80%;
+}
+
+
+.ss-card.active .po {
+  display: block;
+  margin-top: 85%;
+}
+
+/* ----------------------------------------------------
+   TABLET + MOBILE BREAKPOINTS
+---------------------------------------------------- */
+@media (max-width:870px) {
+  .ss-stage{
+      grid-template-rows: repeat(1, 1fr);
+      /* grid-template-rows: repeat(1,1fr); */
+  }
+}
+
+@media (max-width: 768px) {
+
+  .ss-stage {
+    width: 100%;
+    height: auto;
+    border: none;
+    position: relative;
+    
+  }
+
+  .ss-wrapper {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    
+  }
+
+  .ss-card {
+    min-height: 100vh;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    position: relative;
+  }
+
+  /* IMAGE ON TOP */
+  .ss-card img {
+    position: relative ;
+    height: 100vh;
+    width: 50%;
+    margin: 0 auto;
+    opacity: 1 ;
+    top: 0;
+    left: 0 ;
+    margin-right: 5px;
+  }
+
+  /* Title */
+  .ss-card p {
+    position: relative;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  /* Step number */
+  .ss-card span {
+    position: relative;
+    font-size: 58px;
+    margin-top: -130%;
+  }
+
+  /* PO text */
+  .po {
+    display: block ;
+    text-align: center;
+    margin-top: 0px;
+    width: 20% ;
+    font-size: 14px;
+    margin-left:30% ;
+    text-align: left;
+  }
+  /* Disable desktop active animation */
+}
+@media (max-width:500px) {
+  .po {
+    display: block;
+    text-align: center;
+    margin-top: -250px !important;
+    width: 20% !important;
+    font-size: 9px;
+    margin-left:30% !important ;
+    text-align: left;
+  }
+  .ss-stage{
+    margin-top: 90px;
+  }
+   .ss-card span {
+    position: relative;
+    font-size: 58px;
+    margin-top: -180%;
+  }
+}
+.ss-card.active .po {
+  opacity: 0.75;
+  transform: translateY(0);
+  margin-top: 85%;
+  pointer-events: auto;
+}

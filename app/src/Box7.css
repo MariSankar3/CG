@@ -1,0 +1,158 @@
+.scroll-wrapper {
+  height: 300vh;
+  position: relative;
+  background-color: var(--bg-color);
+  text-align: left;
+}
+
+.sticky-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.flw1 {
+  display: flex;
+  padding: 16px 60px;
+}
+
+.pa1 {
+  width: 50%;
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.pa2 {
+  width: 40%;
+  margin-left: auto;
+  font-size: 18px;
+  text-align: right;
+}
+
+/* Tabs */
+.flw2 {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  font-size: 24px;
+}
+
+.flw2 p {
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.flw2 p.active-p {
+  opacity: 1;
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+/* Content */
+.cont {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c1, .c2, .c3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.c1.show,
+.c2.show,
+.c3.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.b4image {
+  width: 150px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.par {
+  font-size: 20px;
+}
+
+.pa {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .scroll-wrapper {
+    height: 200vh;
+  }
+
+  .sticky-content {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .flw1 {
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .pa1, .pa2 {
+    width: 100%;
+    text-align: left;
+  }
+
+  .pa1 {
+    font-size: 24px;
+  }
+
+  .pa2 {
+    font-size: 14px;
+  }
+
+  .flw2 {
+    flex-wrap: wrap;
+    font-size: 16px;
+    height: auto;
+    padding: 12px 0;
+    gap: 8px;
+  }
+
+  .flw2 p {
+    width: 45%;
+    text-align: center;
+  }
+
+  .cont {
+    padding: 24px 16px;
+  }
+
+  .c1, .c2, .c3 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .b4image {
+    width: 120px;
+    height: auto;
+  }
+}
+ 

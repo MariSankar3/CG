@@ -1,0 +1,327 @@
+.box {
+  width: 98%;
+  border: 2px solid rgb(50, 50, 50);
+  padding: 0px !important;
+  box-sizing: border-box;
+  background-color: #131313; /* LIGHT background */
+  color: white;                  /* LIGHT text */
+  margin-top: 32px;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+  /* background-color: red; */
+}
+/* Row 1 → h1 and p side by side */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 40px;
+}
+
+.top-row .hi{
+width: 656px;
+height: 227px;
+opacity: 1;
+gap: 20px;
+font-size: 0.91rem;
+line-height: 1.6;
+font-family: Raleway;
+font-weight: 400;
+font-style: Medium;
+font-size: 18px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+}
+@media (max-width:700px) {
+  .top-row .h1{
+    width: 456px;
+height: 227px;
+opacity: 1;
+gap: 20px;
+font-size: 0.61rem;
+  }
+}
+.gradient-text {
+  background: linear-gradient(90deg, #a1ffce, #7e4493, #89f7fe, #66a6ff);
+  background-size: 300%; /* makes the gradient move */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flow 4s linear infinite; /* infinite loop */
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* paragraph styling */
+.top-row p {
+  text-align: left;
+}
+
+/* Image below both */
+.box img {
+  margin-top: 10px;
+  display: block;
+}
+.doctor-img.d2{
+  display: none;
+  object-fit:fill;
+}
+.small1 { top: 90%; left: 80%; }
+.small2 { top: 100%; left: 80%; }
+.small3 { top: 110%; left: 80%; }
+.small4 { top: 90%; left: 10%; }
+.small5 { top: 100%; left: 10%; }
+.small6 { top: 110%; left: 10%; }
+.small7 {top:90%;right: 20%;}
+
+/* ========== DARK THEME ========== */
+[data-theme="dark"] .box {
+  background-color: white;   /* Dark background */
+  color: black;                 /* White text */
+  border-color: rgb(120, 120, 120);  /* Softer border */
+}
+
+[data-theme="dark"] .top-row p {
+  color: black;  /* smooth grey for readability */
+}
+
+[data-theme="dark"] h1 {
+  color: black;
+}
+@media (max-width: 768px) {
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0px;
+    margin: 3%;
+    width: 100%;
+    margin-top: 0px !important;
+  }
+
+  /* Force BIG doctor image to the very top */
+  .doctor-img.d1{
+    order: -1; /* Moves it to the first element in .box */
+    margin-bottom: 20px;
+    width: 1432px !important;
+    height: 363px !important;
+    display:none;
+  }
+  .doctor-img.d2{
+    order: -1; /* Moves it to the first element in .box */
+    margin-bottom: 20px;
+    width: 1432px !important;
+    height: 303px !important;
+    display:block;
+  }
+
+  /* Text section comes below image */
+  .top-row {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+      width: 100%;
+
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-left: 1.5%;
+  }
+
+  /* Hide ABSOLUTE small images */
+  .small {
+    display: none !important;
+  }
+}
+.doctor-img {
+  position: relative;
+  z-index: 5;
+  max-width: 100%;
+}
+
+/* floating icons */
+.small {
+  position: absolute;
+  width: 181px;
+  height: 40;
+  z-index: 10 !important;
+}
+
+/* RIGHT SIDE */
+.small1 { top: 80%; right: 5%; }
+.small2 { top: 70%; right: 5%; }
+.small3 { top: 60%; right: 5%; }
+
+/* LEFT SIDE */
+.small4 { top: 80%; left: 5%; }
+.small5 { top: 70%; left: 5%; }
+.small6 { top: 60%; left: 5%; }
+
+/* Hide on mid-size screens */
+@media (max-width: 1100px) {
+  .small {
+    display: none !important;
+  }
+  .small.small1 {
+    display: block !important;
+    top: 70%;
+    left: 40%;
+  }
+  .small.small4 {
+    display: block !important;
+    top: 80%;
+    left: 40%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .box { padding: 0; border: none;margin: 0}
+  .small {
+    display: none !important;
+  }
+  .small.small1 {
+    display: block !important;
+    top: 20%;
+    left: 40%;
+  }
+  .small.small4 {
+    display: block !important;
+    top: 30%;
+    left: 40%;
+  }
+}
+@media (max-width:680) {
+  .hi{
+    margin-left: 0px;
+  }
+  
+}
+.top-row .ho{
+width: 656px;
+height: 227px;
+angle: 0 deg;
+opacity: 1;
+}
+.top-row .ho .h{
+font-family: Raleway;
+font-weight: 700;
+font-style: Bold;
+font-size: 55px;
+line-height: 65px;
+margin: 0%;
+width: 96%;
+}
+.hi .img{
+width: 210px;
+height:64px;
+margin-top: 0px;
+}
+
+.hi {
+  display: flex;
+  flex-direction: column;
+  height: 227px;     /* lock the total height */
+  position: relative;
+  overflow: hidden;  /* prevent pushing image down */
+}
+
+.hi p {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.hi a {
+  margin-top: auto;     /* stays at bottom */
+  display: inline-block;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.hi .img {
+  width: 210px;
+  height: 64px;
+  margin: 0;
+}
+/* MOBILE — below 768px */
+/* MOBILE — below 768px */
+@media (max-width: 768px) {
+
+  .top-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .ho {
+    width: 100% !important;  
+    height: auto !important;
+  }
+
+  /* FIX: Correct heading selector */
+  .ho .h {
+    font-size: 35px !important;    
+    line-height: 42px !important;
+    width: 90% !important ;
+    padding-left: 26px;
+  }
+
+  .hi {
+    width: 90% !important;
+    margin-left: 0 !important;
+    height: auto;
+    padding-left: 26px;
+    margin-right: 10px;
+  }
+
+  .hi p,
+  .hi .Typewriter__wrapper {
+    font-size: 14px;
+    line-height: 1.1;
+    width: 100%;
+  }
+
+  .hi .img {
+    height: auto;
+    margin-top: -60px;
+    margin-left: 20%;
+  }
+  .top-row.h{
+   /* width: 110px !important; */
+  }
+  
+}
+@media (max-width:500px) {
+   .small {
+    display: none !important;
+  }
+  .small.small1 {
+    display: block !important;
+    top: 20%;
+    left: 30%;
+  }
+  .small.small4 {
+    display: block !important;
+    top: 30%;
+    left: 30%;
+  }
+  .top-row{
+    margin-left: -10px !important;
+  }
+}
+

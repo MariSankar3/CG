@@ -1,0 +1,176 @@
+html,
+body {
+  font-family: Raleway, sans-serif;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+/* ================= CONTAINER ================= */
+.ontainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ================= LEFT ================= */
+.left {
+  width: 44%;
+  border-right: 2px solid #555;
+  border-left: 2px solid #555;
+  border: 1px solid #555;
+  position: relative;
+  text-align: left;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--bg-color);
+  contain: layout paint;
+  transform: translateZ(0);
+}
+
+/* stacking */
+.r1 { z-index: 1; }
+.r2 { z-index: 2; border-top: 2px solid #555; }
+.r3 { z-index: 3; border-top: 2px solid #555; }
+.r4 { z-index: 4; border-top: 2px solid #555; }
+.r5 { z-index: 5; border-top: 2px solid #555; }
+.r6 { z-index: 6; border-top: 2px solid #555; }
+
+/* ================= FADE ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section > * {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+/* ================= CONTENT ================= */
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 32px;
+  margin-top: 80px;
+}
+
+.section p {
+  font-size: 94px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.section h3 {
+  font-size: 38px;
+  font-weight: 300;
+  margin-left: 32px;
+  width: 430px;
+  text-transform: uppercase;
+}
+
+.section h6 {
+  font-size: 20px;
+  font-weight: 400;
+  width: 430px;
+  margin-left: 32px;
+  line-height: 1.35;
+  margin-top: -20px;
+}
+
+/* ================= DIVIDER ================= */
+.gradient {
+  width: 90%;
+  height: 2px;
+  margin-left: 32px;
+  background: linear-gradient(
+    to right,
+    var(--bg-color),
+    #4c4c4c,
+    var(--bg-color)
+  );
+}
+
+/* ================= RIGHT ================= */
+.right {
+  width: 54%;
+  border-right: 2px solid #555;
+  border: 1px solid #555;
+}
+
+/* ================= IMAGES ================= */
+.img {
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  transform: scale(0.97);
+  transition: transform 1.2s ease-out, opacity 1.2s ease-out;
+  will-change: transform, opacity;
+}
+
+.img1 { background-image: url("./Frame 109.png"); }
+.img2 { background-image: url("./Frame 109.png"); }
+.img3 { background-image: url("./Frame 109.png"); }
+.img4 { background-image: url("./Frame 109.png"); }
+.img5 { background-image: url("./Frame 109.png"); }
+.img6 { background-image: url("./Frame 109.png"); }
+
+@media (max-width: 768px) {
+
+  /* Stack layout */
+  .ontainer {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    border: none;
+  }
+
+  /* Disable sticky on mobile */
+  .section {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Reduce text size */
+  .section p {
+    font-size: 42px;
+  }
+
+  .section h3,
+  .section h6 {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 18px;
+  }
+
+  .top-row {
+    margin-left: 16px;
+    margin-top: 40px;
+  }
+
+  /* Images */
+  .img {
+    height: 60vh;
+    background-size: contain;
+    transform: none;
+  }
+}

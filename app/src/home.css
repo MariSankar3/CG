@@ -1,0 +1,20 @@
+.Logos{
+  width: 73.5678px;
+  height: 60px;
+  position: absolute; /* <-- REQUIRED */
+  top: 40px;
+  left: 40px;
+  opacity: 1;
+}
+body{
+   position: relative;
+  min-height: 600vh; /* enough scroll space for sticky effect */
+  position: relative !important; /* required for sticky */
+  overflow: visible !important;  /* avoid clipping sticky */
+}
+.sticky-container {
+  position: relative; /* parent for sticky*/
+  height: calc(300vh);
+}
+
+

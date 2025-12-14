@@ -1,0 +1,52 @@
+.join-box {
+  width: 150px;          /* reduced from 190px */
+  height: 40px;          /* reduced from 50px */
+  display: flex;
+  align-items: center;
+  background: #1b1b1b;
+  border-radius: 80px;
+  padding: 3px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+  border: 1px solid gray;
+}
+
+/* LEFT TEXT SIDE */
+.join-left {
+  flex: 1;
+  height: 100%;
+  background: linear-gradient(180deg, #818181, #555555);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;      /* reduced */
+  margin-right: -8px;      /* reduced for better overlap */
+  z-index: 1;
+}
+
+.join-left p {
+  margin: 0;
+  font-size: 14px;         /* reduced from 18px */
+  font-weight: 500;
+  color: white !important ;
+  text-decoration: none;
+}
+
+/* RIGHT CIRCLE */
+.join-right {
+  width: 42px;             /* reduced from 53px */
+  height: 42px;            /* reduced from 56px */
+  background: linear-gradient(180deg, #383838, #464646);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ARROW SIZE */
+.arrow {
+  font-size: 22px;         /* reduced from 30px */
+  margin-top: -8%;         /* adjusted */
+  margin-left: 6%;         /* adjusted */
+  color: #a5a5a5;
+  font-weight: bold;
+}

@@ -1,0 +1,137 @@
+.box4-container {
+  padding: 30px 0;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  position: relative;
+  font-family: Raleway;
+  width: 100%;
+  height: 190px;
+  position: relative;
+}
+
+.box4-inner {
+  width: 95%;
+  background: var(--bg-color);
+  border: 1px solid #3a3a3a;
+  color: var(--text-color);
+}
+
+.box4-title-section {
+  padding: 30px 40px;
+}
+
+.box4-title {
+  font-size: 38px;
+  text-transform: uppercase;
+}
+
+.box4-subtitle {
+  font-size: 20px;
+}
+
+.box4-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  gap: 20px;
+}
+
+.box4-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+  padding: 20px;
+  width: 20%;
+  border-top: 1px solid #3a3a3a;
+  border-left: 1px solid #3a3a3a;
+  position: relative;
+  transition: transform 0.6s ease;
+  transform-origin: center center; /* default */
+  z-index: 1;
+}
+.col-text {
+  display: flex;
+  align-items: flex-start;
+  margin: 0%;
+}
+
+.col-img {
+  position: absolute;
+  width: 81px;
+  height: 193px;
+  opacity: 1;
+  margin: 0;
+  margin-top: 250px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.col-step {
+  margin-bottom: 0px;
+  font-size: 70px;
+  font-weight: 300;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width:1240px) {
+  .col-img{
+    position: relative;
+    width: 100% ;
+    height: 100%;
+    margin-top: 25px;
+  }
+  .box4-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+@media (max-width: 900px) {
+  .box4-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .box4-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .col-img{
+    position: relative;
+    width: 100% ;
+    height: 90%;
+  }
+  .box4-col.expand {
+    transform: scale(1.05);
+  }
+} 
+@media(max-width: 700px) {
+.box4-inner{
+    border: 1px solid #3a3a3a;
+    height: 30vh;
+}}
+
+@media (max-width: 600px) {
+  .box4-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.box4-grid {
+  display: flex;
+  width: 100%;
+}
+
+.box4-col {
+  flex: 1;               
+  transition: flex 0.5s ease, opacity 0.4s ease;
+  border-top: 1px solid #3a3a3a;
+  border-left: 1px solid #3a3a3a;
+}
+
+.box4-col.expand {
+  flex: 3;              /* expanded = 30% */
+}
+
+.box4-col.shrink {
+  flex: 1;              /* others = ~14% */
+}

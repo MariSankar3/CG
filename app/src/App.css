@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url('./assets/fonts/Avenir-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+html, body {
+ margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.App-logo {
+  pointer-events: none;
+}
+body{
+  margin: 0%;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* fixes any remaining overflow */
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  color: var(--text-color);
+  /* min-height: 100vh; */
+  /* min-height: 600vh; enough scroll space for 6 columns */
+ 
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#logo{
+  height: 50px;
+  margin-top: 10%;
+}
+
+
+.navbar {
+  width: 100%;
+  padding: 20px 60px;
+  background-color: #131313;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  height: 55px;
+  margin-right: 15px;
+}
+
+/* LIGHT THEME (default) */
+:root {
+  --bg-color: #131313;
+  --text-color: white;
+  --text-color: #E1E1E1;
+  --border:rgba(128, 128, 128, 0.429); 
+}
+/* DARK THEME */
+[data-theme="dark"] {
+  --bg-color: white;
+  --text-color: black;
+  --border:black;
+}
+
+/* apply globally */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px; /* space between logo & text */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center; /* makes text centered */
+  animation: fadeIn 1s ease-in-out;
+}
+.rotating-logo {
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite, scaleUp 1s ease-in-out;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+

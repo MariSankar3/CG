@@ -1,0 +1,193 @@
+/* OUTER CONTAINER */
+.box5-container {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 40px 0;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+/* OUTER BORDER WRAPPER (IMPORTANT) */
+.box5-inner {
+  width: 95%;
+  border: 2px solid #3a3a3a;   /* FULL OUTER BORDER ✔ */
+  background: var(--bg-color);
+}
+
+/* ROWS */
+.box5-row {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+/* TOP PARAGRAPH */
+.box5-para h3 {
+font-family: Raleway;
+font-weight: 400;
+font-style: Regular;
+font-size: 38px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+text-transform: uppercase;
+margin-left: 32px;
+margin-top: 32px;
+}
+.box5-para p {
+font-family: Raleway;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+margin-left: 32px;
+}
+
+/* TITLES */
+.box5-section-title {
+  display: flex;
+  flex-direction: column;
+}
+.box5-section-title h2 {
+color: #777;
+font-family: Raleway;
+font-weight: 100;
+font-style: Thin;
+font-size: 94px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+margin: 0%;
+margin-left: 32px;
+margin-top: 24px;
+}
+.box5-section-title p {
+  margin-top: -10px;
+  font-family: Raleway;
+font-weight: 400;
+font-style: Regular;
+font-size: 34px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+margin-left: 32px;
+margin-top: 9px;
+}
+
+/* GRID BASE */
+.box5-grid {
+  display: grid;
+  border: 1px solid #3a3a3a;
+  border-top: 2px solid gray;
+}
+
+/* 4 COL PROGRAMS */
+.box5-program-grid {
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #3a3a3a;
+}
+
+/* OUTCOMES: 3 COL */
+.box5-outcomes-grid {
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #3a3a3a;
+  
+}
+.box5-card.outcome-card{
+  border: 1px solid #3a3a3a;
+  margin: 20px;
+}
+
+.box5-grid .box5-card.outcome-card:first-child {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 48px;
+  margin-top: 0px;
+  margin-right: 16px;
+}
+.box5-card.outcome-card p{
+  margin-bottom: 0px;
+}
+.box5-card p{
+    font-size: 0.5rem ;
+}
+/* CARD STYLING */
+.box5-card {
+  padding: 25px;
+  border-left: 1px solid #3a3a3a;
+  font-size: 1.2rem;
+}
+.box5-card:first-child {
+  border-left: none;
+}
+
+.box5-img {
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+/* Outcomes image */
+.out-img {
+  width: 100%;
+}
+
+.box5-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-family: Raleway;
+font-weight: 300;
+font-style: Light;
+font-size: 28px;
+leading-trim: NONE;
+line-height: 32px;
+letter-spacing: 0%;
+vertical-align: bottom;
+}
+
+.box5-card p {
+/* opacity: 0.7; */
+font-family: Raleway;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .box5-program-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .box5-outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .box5-para h3{
+    margin-left: 28px;
+  }
+  box5-para p{
+    margin-left: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .box5-container{
+    margin-top: 20%;
+  }
+}
+@media (max-width: 600px) {
+  .box5-program-grid,
+  .box5-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.outcome-card{
+  border: 1px rgba(70, 70, 70, 0.279) solid;
+}
