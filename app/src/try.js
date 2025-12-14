@@ -38,7 +38,7 @@ function Try() {
             num: "02",
             title: "Built for safety first",
             desc:
-              "AI Doctor avoids harmful or risky recommendations and escalates to clinicians.",
+              "AI Doctor avoids harmful or risky recommendations and escalates to clinician.",
           },
           {
             num: "03",
